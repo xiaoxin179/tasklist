@@ -13,7 +13,7 @@
         type="button"
         class="btn"
         :class="active === 1 ? 'btn-primary' : 'btn-secondary'"
-        @click="changeActive(0)"
+        @click="changeActive(1)"
       >
         完成计划
       </button>
@@ -21,7 +21,7 @@
         type="button"
         class="btn"
         :class="active === 2 ? 'btn-primary' : 'btn-secondary'"
-        @click="changeActive(0)"
+        @click="changeActive(2)"
       >
         未完成计划
       </button>
@@ -36,6 +36,7 @@ export default {
       active: 0,
     };
   },
+  emit:["changeActive"],
   methods:{
     changeActive(index){
         this.active=index;
